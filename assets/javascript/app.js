@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // Initialize Firebase
 var config = {
  apiKey: "AIzaSyAihlbC4ivgJwyFqAz-FYNf93sy8bz636I",
@@ -10,6 +11,21 @@ var config = {
 
 firebase.initializeApp(config);
 var database = firebase.database();
+=======
+
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAihlbC4ivgJwyFqAz-FYNf93sy8bz636I",
+    authDomain: "localgoods-aa6c0.firebaseapp.com",
+    databaseURL: "https://localgoods-aa6c0.firebaseio.com",
+    projectId: "localgoods-aa6c0",
+    storageBucket: "",
+    messagingSenderId: "1095816598731"
+  };
+  firebase.initializeApp(config);
+
+   var database = firebase.database();
+>>>>>>> 284b9c8097806b268d993b77dc13aa4ebe106702
 
 var topics = ["Eggs", "Bread/Grains", "Milk/Cheese", "Lettuce", "Chickens", "Goats"];
 
@@ -53,6 +69,7 @@ function onSearchClick(){
 
 
 
+<<<<<<< HEAD
  var map = L.map('mapid').setView([51.505, -0.09], 13);
  
  L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
@@ -73,3 +90,16 @@ function onSearchClick(){
 
    var mymap = L.map('mapid').setView([51.505, -0.09], 13);
    
+=======
+var map = L.map('map').setView([51.505, -0.09], 13);
+
+   L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+   }).addTo(map);
+
+   L.marker([51.5, -0.09]).addTo(map)
+      .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+      .openPopup();
+      console.log(map);
+
+>>>>>>> 284b9c8097806b268d993b77dc13aa4ebe106702
