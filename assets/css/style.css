@@ -12,6 +12,13 @@ body {
 #search-descriptor {
     margin: 10px;
     font-variant: small-caps;
+<<<<<<< HEAD
+}
+
+#mapid { 
+    height: 180px; 
+}
+=======
 
 #mapid { 
 
@@ -19,3 +26,4 @@ body {
 
 
 }
+>>>>>>> 284b9c8097806b268d993b77dc13aa4ebe106702
