@@ -17,7 +17,7 @@
   <!-- Link to jquery -->
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <!-- Link to favicon -->
-  <link rel="icon" type="image/png" href="assets/images/corn.png">
+  <!-- <link rel="icon" type="image/ico" href="assets/images/favicon.ico"> -->
   <!-- Link to Google fonts -->
 
   <title>Local Goods</title>
@@ -25,40 +25,26 @@
 </head>
 <body>
 
-  
-
-  <a class="navbar-brand" href="#">Menu</a>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="file:///C:/Users/volle/Documents/code-homeworks/Project-One-March/index.html">Home<span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="file:///C:/Users/volle/Documents/code-homeworks/Project-One-March/input-page.html">Sell</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">About Us</a>
-      </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-  </div>
-</nav>
-
-  
   <div class="container">
-    <h1>What would you like to purchase?</h1>
+  <h1>Categories of Produce and Goods</h1>
     
     <div class="row" id="buttons"></div>
 
-    <div class="row" id="mapid"></div>
-  </div>
+    
+
+        <form id="describe-form">
+               
+                <label for="text-input">Search for a new category!</label>
+                <input type="text" id="topic-input"><br>
+                <button id="search-descriptor" type="button">Search</button>
+            </form>
 
 
 
+            <div class="row" id ="categories"></div>
+
+
+             <div class="row" id="mapid"></div>
 
         
 
@@ -76,14 +62,5 @@
  <script src="assets/javascript/home-page.js"></script>
 
 
- <!--  <form id="describe-form">
-               
-      <label for="text-input">Search for a new category!</label>
-      <input type="text" id="topic-input"><br>
-      <button id="search-descriptor" type="button">Search</button>
-  </form>
-
-  <div class="row" id ="categories"></div>
- -->
 </body>
 </html>
