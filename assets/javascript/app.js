@@ -1,3 +1,4 @@
+
   // Initialize Firebase
   var config = {
     apiKey: "AIzaSyAihlbC4ivgJwyFqAz-FYNf93sy8bz636I",
@@ -63,3 +64,4 @@ var map = L.map('map').setView([51.505, -0.09], 13);
       .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
       .openPopup();
       console.log(map);
+

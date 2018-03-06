@@ -1,3 +1,4 @@
+
 body {
     background-color:aliceblue; 
 	text-align: center;
@@ -11,4 +12,10 @@ body {
 #search-descriptor {
     margin: 10px;
     font-variant: small-caps;
+
+#mapid { 
+
+	height: 180px; 
+
+
 }
