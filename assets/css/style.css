@@ -1,0 +1,14 @@
+body {
+    background-color:aliceblue; 
+	text-align: center;
+}
+
+
+#describe-form {
+    padding: 20px; 
+}
+
+#search-descriptor {
+    margin: 10px;
+    font-variant: small-caps;
+}

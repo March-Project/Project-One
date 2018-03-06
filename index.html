@@ -13,16 +13,16 @@
   <!-- Link to jquery -->
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <!-- Link to favicon -->
-  <link rel="icon" type="image/png" href="assets/images/favicon-feather.png">
+  <!-- <link rel="icon" type="image/ico" href="assets/images/favicon.ico"> -->
   <!-- Link to Google fonts -->
 
-  <title>Giphy!API</title>
+  <title>Local Goods</title>
 
 </head>
 <body>
 
   <div class="container">
-  <h1>How would you describe yourself?</h1>
+  <h1>Categories of Produce and Goods</h1>
     
     <div class="row" id="buttons"></div>
 
@@ -30,22 +30,23 @@
 
         <form id="describe-form">
                
-                <label for="text-input">Add a new descriptor!</label>
+                <label for="text-input">Search for a new category!</label>
                 <input type="text" id="topic-input"><br>
                 <button id="search-descriptor" type="button">Search</button>
-                <button id="clear-gifs" type="button">Clear Gifs</button>
+                <button id="clear-category" type="button">Clear category</button>
             </form>
 
 
 
-            <div class="row" id ="gifs"></div>
+            <div class="row" id ="categories"></div>
         
 
                     
 
 
 
-
+  <!-- Firebase link -->
+  <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
 <!-- Link to javascript -->
  <script src="assets/javascript/app.js"></script>
 
