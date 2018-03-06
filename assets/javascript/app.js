@@ -1,24 +1,19 @@
-//var googleApiKey = AIzaSyBVw0nXlHEyYbC6WWsyTjm_IPDQBze0Jlo;
-//var googleLink =
-//"https://maps.googleapis.com/maps/api/js?key=" +
-//googleApiKey +
-//"&callback=initMap";
-
-// Initialize Firebase
 
 var config = {
-  apiKey: "AIzaSyB0p6U_W374WOOQ2H-TNBzNJ1GiAZl-tHQ",
-  authDomain: "project-one-march.firebaseapp.com",
-  databaseURL: "https://project-one-march.firebaseio.com",
-  projectId: "project-one-march",
-  storageBucket: "",
-  messagingSenderId: "756241675187"
+ apiKey: "AIzaSyB0p6U_W374WOOQ2H-TNBzNJ1GiAZl-tHQ",
+ authDomain: "project-one-march.firebaseapp.com",
+ databaseURL: "https://project-one-march.firebaseio.com",
+ projectId: "project-one-march",
+ storageBucket: "",
+ messagingSenderId: "756241675187"
+
 };
 firebase.initializeApp(config);
 var database = firebase.database();
 var name = "";
 var hours;
 var goods;
+
 
 $("#submit").on("click", function() {
   event.preventDefault();
