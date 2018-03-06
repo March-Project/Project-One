@@ -1,105 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title></title>
-    
-     <!-- Bootstrap link -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/flatly/bootstrap.min.css">
-    <!--CSS link -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+
+  <!-- Link to bootstrap -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!-- Link to css -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-     <!-- favicon link -->
-     <!-- <link rel="icon" type="image/ico" href="assets/images/favicon.ico"> -->
-     <!-- google fonts link -->
+  <!-- Link to jquery -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- Link to favicon -->
+  <link rel="icon" type="image/png" href="assets/images/favicon-feather.png">
+  <!-- Link to Google fonts -->
+
+  <title>Giphy!API</title>
+
 </head>
 <body>
 
-<div class="container">
-       <!-- Jumbotron for Title -->
-       <div class="jumbotron">
-            <h1 class="text-center">Local Goods</h1>
-      </div>
-        <!-- Data Table -->
-        <div class="row">
-            <div class="col-sm-12">
+  <div class="container">
+  <h1>How would you describe yourself?</h1>
     
-              <div class="panel panel-primary">
-      
-                <div class="panel-heading">
-                  <h3 class="panel-title"><strong>Local Producers</strong></h3>
-                </div>
-      
-                 <!-- added posts for produce-->
-                <div class="panel-body" id="userName">
-                    <table id="dataTable" style="width: 100%">
-                        <tr>
-                          <th>Farmers Name</th>
-                          <th>Location</th> 
-                          <th>Hours</th>
-                          <th>Goods</th>
-          
-                        </tr>
-                     </table>   
-                </div>
-              </div>
-            </div>
-          </div>
-    
-        <!-- Row for adding posts -->
-        <div class="row">
-          <div class="col-sm-12">
-        
-            <!-- panel for title of form -->
-            <div class="panel panel-primary">
-              <div class="panel-heading">
-                <h3 class="panel-title"><strong>Add Post</strong></h3>
-              </div>
-              <div class="panel-body">
-    
-                <!-- HTML form for handling inputs-->
-                <form role="form" id="produceForm">
-    
-                  <!--User/produce info input-->
-                  <div class="form-group">
-                    <label for="name">User Name</label>
-                    <input type="text" class="form-control" id="name">
-                  </div>
-    
-                  <!-- Location input -->
-                  <div class="form-group">
-                    <label for="location">Location</label>
-                    <input type="text" class="form-control" id="destination">
-                  </div>
-    
-                  <!-- Hours of selling Input-->
-                  <div class="form-group">
-                    <label for="hours">Hours of Operation</label>
-                    <input type="text" class="form-control" id="hours">
-                  </div>
-    
-                  <!--Goods/produce Input -->
-                  <div class="form-group">
-                    <label for="goods">Goods or Produce</label>
-                    <input type="text" class="form-control" id="goods">
-                  </div>
-    
-                  <!-- Submit button -->
-                  <button type="submit" value="save" class="btn btn-default" id="submit">Submit</button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-</div>
+    <div class="row" id="buttons"></div>
 
-        <!-- Firebase link -->
-  <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
-   <!-- jQuery Link -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-   <!--JavaScript link -->
-  <script src="assets/javascript/app.js"></script>
-   
+    
+
+        <form id="describe-form">
+               
+                <label for="text-input">Add a new descriptor!</label>
+                <input type="text" id="topic-input"><br>
+                <button id="search-descriptor" type="button">Search</button>
+                <button id="clear-gifs" type="button">Clear Gifs</button>
+            </form>
+
+
+
+            <div class="row" id ="gifs"></div>
+        
+
+                    
+
+
+
+
+<!-- Link to javascript -->
+ <script src="assets/javascript/app.js"></script>
+
 </body>
 </html>
