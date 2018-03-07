@@ -1,4 +1,3 @@
-
 var config = {
  apiKey: "AIzaSyB0p6U_W374WOOQ2H-TNBzNJ1GiAZl-tHQ",
  authDomain: "project-one-march.firebaseapp.com",
@@ -10,7 +9,9 @@ var config = {
 };
 firebase.initializeApp(config);
 var database = firebase.database();
+
 var name = "";
+var destination = "";
 var hours;
 var goods;
 
@@ -19,17 +20,15 @@ $("#submit").on("click", function() {
   event.preventDefault();
 
   name = $("#name").val();
-
   destination = $("#destination").val();
-
   hours = $("#hours").val();
-
   goods = $("#goods").val();
 
   $("#name").val("");
   $("#destination").val("");
   $("#hours").val("");
   $("#goods").val("");
+
   database.ref().push({
     name: name,
     destination: destination,
@@ -71,18 +70,18 @@ database.ref().on(
 
 var map = L.map('mapid').setView([51.505, -0.09], 13);
 
-L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(map);
+	L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+	    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+	}).addTo(map);
 
-L.marker([51.5, -0.09]).addTo(map)
-    .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
-    .openPopup();
+	L.marker([51.5, -0.09]).addTo(map)
+	    .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+	    .openPopup();
 
 
-  L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
-    maxZoom: 18,
-    id: 'mapbox.streets',
-    accessToken: 'your.mapbox.access.token'
-}).addTo(mymap);
+	  L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+	    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+	    maxZoom: 18,
+	    id: 'mapbox.streets',
+	    accessToken: 'your.mapbox.access.token'
+	}).addTo(mymap);
