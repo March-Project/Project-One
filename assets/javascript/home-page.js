@@ -20,23 +20,9 @@ var topics = [
   "Goats"
 ];
 
-$(document).ready(function() {
-  $("#search_good").on("click", onSearchClick);
-
-  for (var i = 0; i < topics.length; i++) {
-    addTopicButton(topics[i]);
-  }
-
-  $(".topic").on("click", handleButtonClick);
-  $(this).attr("data-name");
-
   var audioElement = document.createElement("audio");
 
-  // Set it's source to the location
-  // of our Captain Planet theme song file.
   audioElement.setAttribute("src", "assets/music/Stardew_Valley_OST.mp3");
-
-  // Theme Button
 
 
   $(".theme-button").on("click", function() {
@@ -48,50 +34,80 @@ $(document).ready(function() {
     audioElement.pause();
 
   });
+
+  // Set it's source to the location
+  // of our Captain Planet theme song file.
+ 
+  $(document).ready(function(){
+   $("#search_good").on("click", onSearchClick);
+ 
+    for(var i = 0; i < topics.length; i++) {
+       addTopicButton(topics[i]);
+    }
+ 
+   $("#buttons").on("click", "button"){
+      $(this).attr("data-name");
+   }
+   
+
+   $("#buttons").on("click", "button", function(){
+    var buttonValue = $(this).attr("data-topic");
+    console.log(buttonValue);
+    displayProduce(buttonValue); 
+    });
+      
+      
 });
 
-function handleButtonClick(){
 
-  console.log($(this).attr("data-topic"));
+function displayProduce(produce){
+  database
+    .ref()
+    .orderByChild("goods")
+    .equalTo(produce)
+    .on("child_added", displayProduceHTML);
+}
 
-};
+});
 
-// grabs value from text box and adds to array
-function getSearchVal() {
+function displayProduceHTML(snapshot) {
+  var snap = snapshot.val();
+
+  //build HTML here
+  $("#name-display").text(snap.name);
+  $("#destination-display").text(snap.destination); 
+  $("#hours-display").text(snap.hours);
+  $("#goods-display").text(snap.goods); 
+
+  //append it to goods info here
+  $("#goodsInfo").append(snap.goods);
+  $("#goodsInfo").append(snap.destination);
+  $("#goodsInfo").append(snap.hours);
+  $("#goodsInfo").append(snap.goods); 
+}
+
+
+ 
+ // grabs value from text box and adds to array 
+ function getSearchVal(){
   var searchBox = $("#topic-input");
-  var newTopic = searchBox.val();
-  topics.push(newTopic);
-  searchBox.val("");
+   var newTopic = searchBox.val();
+   topics.push(newTopic);
+   searchBox.val("");
 
-  return newTopic;
+   return newTopic;
+ 
+ function onSearchClick(){ 
+   var searchVal = getSearchVal();
+   addTopicButton(searchVal);
+
 }
-
-// creates new button with text box value and appends html.
-function addTopicButton(newTopic) {
-  var topicButton = $("<button class='topic'>");
-  topicButton.text(newTopic);
-  topicButton.attr("data-topic", newTopic);
-
-  $("#buttons").append(topicButton);
-}
-
-
-
-
-//when Search is clicked, button with text is added to the browser.
-function onSearchClick() {
-  var searchVal = getSearchVal();
-  addTopicButton(searchVal);
-}
-
-//var map = L.map("mapid").setView([35.7796, -78.6382], 13);
-var mymap = L.map("mapid").setView([35.7796, -78.6382], 13);
-
-
+ 
+ var mymap = L.map("mapid").setView([35.7796, -78.6382], 13);
 L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png", {
   attribution:
     '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(mymap);
+})//.addTo(mymap);
 
 L.marker([35.7796, -78.6382])
   .addTo(mymap)
@@ -110,10 +126,3 @@ L.tileLayer(
   }
 )//.addTo(mymap);
 
-
-var circle = L.circle([35.779, -78.63], {
-  color: "red",
-  fillColor: "#f03",
-  fillOpacity: 0.5,
-  radius: 500
-}).addTo(mymap);
