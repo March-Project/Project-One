@@ -1,28 +1,44 @@
+// Initialize Firebase
+var config = {
+  apiKey: "AIzaSyAihlbC4ivgJwyFqAz-FYNf93sy8bz636I",
+  authDomain: "localgoods-aa6c0.firebaseapp.com",
+  databaseURL: "https://localgoods-aa6c0.firebaseio.com",
+  projectId: "localgoods-aa6c0",
+  storageBucket: "localgoods-aa6c0.appspot.com",
+  messagingSenderId: "1095816598731"
+};
+firebase.initializeApp(config);
 
- // Initialize Firebase
- var config = {
- apiKey: "AIzaSyAihlbC4ivgJwyFqAz-FYNf93sy8bz636I",
- authDomain: "localgoods-aa6c0.firebaseapp.com",
- databaseURL: "https://localgoods-aa6c0.firebaseio.com",
- projectId: "localgoods-aa6c0",
- storageBucket: "",
- messagingSenderId: "1095816598731"
-apiKey: "AIzaSyAihlbC4ivgJwyFqAz-FYNf93sy8bz636I",
-authDomain: "localgoods-aa6c0.firebaseapp.com",
-databaseURL: "https://localgoods-aa6c0.firebaseio.com",
-projectId: "localgoods-aa6c0",
-storageBucket: "localgoods-aa6c0.appspot.com",
-messagingSenderId: "1095816598731"
- };
+var database = firebase.database();
 
- firebase.initializeApp(config);
+var topics = [
+  "Eggs",
+  "Bread/Grains",
+  "Milk/Cheese",
+  "Lettuce",
+  "Chickens",
+  "Goats"
+];
 
- var database = firebase.database();
+  var audioElement = document.createElement("audio");
+
+  audioElement.setAttribute("src", "assets/music/Stardew_Valley_OST.mp3");
+
+
+  $(".theme-button").on("click", function() {
+    audioElement.play();
+  });
+
+  // Pause Button
+  $(".pause-button").on("click", function() {
+    audioElement.pause();
+
+  });
+
+  // Set it's source to the location
+  // of our Captain Planet theme song file.
  
-var topics = ["Eggs", "Bread", "Milk", "Chickens", "Goats"];
- 
- 
- $(document).ready(function(){
+  $(document).ready(function(){
    $("#search_good").on("click", onSearchClick);
  
     for(var i = 0; i < topics.length; i++) {
@@ -51,6 +67,8 @@ function displayProduce(produce){
     .equalTo(produce)
     .on("child_added", displayProduceHTML);
 }
+
+});
 
 function displayProduceHTML(snapshot) {
   var snap = snapshot.val();
@@ -85,17 +103,17 @@ function displayProduceHTML(snapshot) {
 
 }
  
- 
-
  var mymap = L.map("mapid").setView([35.7796, -78.6382], 13);
 L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png", {
   attribution:
     '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
 })//.addTo(mymap);
+
 L.marker([35.7796, -78.6382])
   .addTo(mymap)
   .bindPopup("Where am I?")
   .openPopup();
+
 L.tileLayer(
   "https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={pk.eyJ1IjoibHN3ZWhiaWUiLCJhIjoiY2plaHIzMHU0MmJ5NzJ4bWs5YnJkMWp2OSJ9.Y-2AEgRxi3Iiq8j7TcSlcQ}",
   {
@@ -107,9 +125,4 @@ L.tileLayer(
       "pk.eyJ1IjoibHN3ZWhiaWUiLCJhIjoiY2plaHIzMHU0MmJ5NzJ4bWs5YnJkMWp2OSJ9.Y-2AEgRxi3Iiq8j7TcSlcQs"
   }
 )//.addTo(mymap);
-var circle = L.circle([35.779, -78.63], {
-  color: "red",
-  fillColor: "#f03",
-  fillOpacity: 0.5,
-  radius: 500
-})//.addTo(mymap);
+
