@@ -1,30 +1,61 @@
-// Initialize Firebase
+ // Initialize Firebase
 var config = {
- apiKey: "AIzaSyAihlbC4ivgJwyFqAz-FYNf93sy8bz636I",
- authDomain: "localgoods-aa6c0.firebaseapp.com",
- databaseURL: "https://localgoods-aa6c0.firebaseio.com",
- projectId: "localgoods-aa6c0",
- storageBucket: "",
- messagingSenderId: "1095816598731"
+apiKey: "AIzaSyAihlbC4ivgJwyFqAz-FYNf93sy8bz636I",
+authDomain: "localgoods-aa6c0.firebaseapp.com",
+databaseURL: "https://localgoods-aa6c0.firebaseio.com",
+projectId: "localgoods-aa6c0",
+storageBucket: "localgoods-aa6c0.appspot.com",
+messagingSenderId: "1095816598731"
 };
-
 firebase.initializeApp(config);
+
 var database = firebase.database();
 
-var topics = ["Eggs", "Bread/Grains", "Milk/Cheese", "Lettuce", "Chickens", "Goats"];
+var topics = ["Eggs", "Bread", "Milk", "Chickens", "Goats"];
 
 
 $(document).ready(function(){
-   $("#search-descriptor").on("click", onSearchClick);
+   $("#search_good").on("click", onSearchClick);
 
    for(var i = 0; i < topics.length; i++) {
       addTopicButton(topics[i]);
    }
 
-   $("#buttons").on("click", "button");
-      $(this).attr("data-name");
-
+   $("#buttons").on("click", "button", function(){
+    var buttonValue = $(this).attr("data-topic");
+    console.log(buttonValue);
+    displayProduce(buttonValue); 
    });
+      
+      
+});
+
+
+function displayProduce(produce){
+  database
+    .ref()
+    .orderByChild("goods")
+    .equalTo(produce)
+    .on("child_added", displayProduceHTML);
+}
+
+function displayProduceHTML(snapshot) {
+  var snap = snapshot.val();
+
+  //build HTML here
+  $("#name-display").text(snap.name);
+  $("#destination-display").text(snap.destination); 
+  $("#hours-display").text(snap.hours);
+  $("#goods-display").text(snap.goods); 
+
+  //append it to goods info here
+  $("#goodsInfo").append(snap.goods);
+  $("#goodsInfo").append(snap.destination);
+  $("#goodsInfo").append(snap.hours);
+  $("#goodsInfo").append(snap.goods); 
+}
+
+
 
 // grabs value from text box and adds to array 
 function getSearchVal(){
@@ -52,7 +83,6 @@ function onSearchClick(){
 }
 
 
-
 var map = L.map('mapid').setView([51.505, -0.09], 13);
  
  L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
@@ -69,7 +99,8 @@ var map = L.map('mapid').setView([51.505, -0.09], 13);
      maxZoom: 18,
      id: 'mapbox.streets',
      accessToken: 'your.mapbox.access.token'
- }).addTo(mymap);
+ });
+ // .addTo(mymap);
 
-   var mymap = L.map('mapid').setView([51.505, -0.09], 13);
+   // var mymap = L.map('mapid').setView([51.505, -0.09], 13);
    
