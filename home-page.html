@@ -33,22 +33,30 @@
 <body>
 
 
-  <a class="navbar-brand" href="#">Menu</a>
+<header>
+  
+  <!-- Main Navbar goes here -->
+  <div class="navbar-fixed">
+    <nav class="top-nav">
+      <div class="nav-wrapper">
+        <a href="#!" class="brand-logo">Logo</a>
+        <ul class="right hide-on-med-and-down">
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+  <!-- <a class="navbar-brand" href="#">Menu</a> -->
+
+  <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto"> -->
       <li class="nav-item active">
         <a class="nav-link" href="file:///C:/Users/volle/Documents/code-homeworks/Project-One-March/index.html">Home<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="file:///C:/Users/volle/Documents/code-homeworks/Project-One-March/input-page.html">Sell</a>
       </li>
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link disabled" href="#">About Us</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
-
       <input class="form-control mr-sm-2" type="text" placeholder="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" id="search_good" type="submit">Search</button>
 
@@ -56,7 +64,16 @@
   </div>
 </nav>
 
-  
+<li><a href="badges.html"><i class="material-icons right">view_module</i>Link with Right Icon</a></li> -->
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>
+ 
+<!-- Main Body --> 
+<main>  
+
   <div class="container">
     <h1>What would you like to purchase?</h1>
     
@@ -69,16 +86,54 @@
   </div>
 
 
-  <br>
-  <br>
-   <div>
-    <source src="/assets/music/Stardew_Valley_OST.mp3" type="audio/mpeg">
-    <div class="text-center">
-          <button class="btn btn-warning btn-xs theme-button"><span class="glyphicon glyphicon-music"></span> Play Theme!</button>
-          <button class="btn btn-default btn-xs pause-button"><span class="glyphicon glyphicon-pause"></span> Pause Song</button>
+    <div class="row" id="goodsInfo"></div>
+
+
+      <br>
+      <br>
+      <div>
+        <source src="/assets/music/Stardew_Valley_OST.mp3" type="audio/mpeg">
+        <div class="text-center">
+              <button class="btn btn-warning btn-xs theme-button"><span class="glyphicon glyphicon-music"></span> Play Theme!</button>
+              <button class="btn btn-default btn-xs pause-button"><span class="glyphicon glyphicon-pause"></span> Pause Song</button>
         </div>
+      </div>
+    </div>
   </div>
-</div>
+  
+</main>
+
+
+<!-- Footer -->
+  <footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Footer Content</h5>
+                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2014 Copyright Text
+            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            </div>
+          </div>
+        </footer>               
+
+
+
+
                   
   <!-- Firebase link -->
   <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
