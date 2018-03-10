@@ -6,8 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
 
+
   <!-- Link to bootstrap -->
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
   <!-- Link to css -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
   <!-- Link to Leaflet CSS-->
@@ -19,6 +23,9 @@
   <!-- Link to favicon -->
   <link rel="icon" type="image/png" href="assets/images/corn.png">
   <!-- Link to Google fonts -->
+
+  <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
+
 
   <title>Local Goods</title>
 
@@ -42,8 +49,8 @@
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    <input class="form-control mr-sm-2" type="text" placeholder="Search">
+     <button class="btn btn-outline-success my-2 my-sm-0" id="search_good" type="submit">Search</button>
     </form>
   </div>
 </nav>
@@ -58,7 +65,18 @@
   </div>
 
 
+<br>
+<br>
 
+<div>
+<source src="/assets/music/Stardew_Valley_OST.mp3" type="audio/mpeg">
+
+ <div class="text-center">
+          <button class="btn btn-warning btn-xs theme-button"><span class="glyphicon glyphicon-music"></span> Play Theme!</button>
+          <button class="btn btn-default btn-xs pause-button"><span class="glyphicon glyphicon-pause"></span> Pause Song</button>
+        </div>
+
+</div>
 
         
 
@@ -76,13 +94,10 @@
  <script src="assets/javascript/home-page.js"></script>
 
 
- <!--  <form id="describe-form">
-               
-      <label for="text-input">Search for a new category!</label>
-      <input type="text" id="topic-input"><br>
-      <button id="search-descriptor" type="button">Search</button>
-  </form>
   <div class="row" id ="categories"></div>
- -->
+
 </body>
 </html>
+
+
+
