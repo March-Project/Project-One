@@ -17,7 +17,6 @@ var hours;
 var goods;
 
 
-
 $("#submit").on("click", function() {
   event.preventDefault();
 
