@@ -1,9 +1,77 @@
 
 body {
-    background-color:aliceblue; 
+    background:url("../images/background.jpeg");
+	background-repeat: no-repeat;
+	background-size: cover; 
 	text-align: center;
 }
 
+h1{
+	color: white;
+	font-family: 'Abril Fatface', cursive;
+  background:rgba(0,0,0,0.5);
+  text-shadow: 12px 12px 10px black;
+  box-shadow: 10px 10px 20px black;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.navbar-brand {
+	float: right;
+	color: white;
+	 background:rgba(0,0,0,0.5);
+  	text-shadow: 12px 12px 10px black;
+  	box-shadow: 10px 10px 20px black;
+  	margin-right: 20px;
+  	font-size: 15px;
+  	border-radius: 5px;
+  	text-align: center;
+}
+
+.nav-link{
+	float: right;
+	color: white;
+	background:rgba(0,0,0,0.5);
+  	text-shadow: 12px 12px 10px black;
+ 	box-shadow: 10px 10px 20px black;
+ 	margin-right: 20px;
+ 	border-radius: 5px;
+ 	text-align: center;
+}
+
+.nav-item{
+ 	float: right;
+ 	color: white;
+  	background:rgba(0,0,0,0.5);
+  	text-shadow: 12px 12px 10px black;
+  	box-shadow: 10px 10px 20px black;
+  	margin-right: 20px;
+  	border-radius: 5px;
+  	text-align: center;
+}
+
+#dataTable{
+	color: white;
+	background:rgba(0,0,0,0.5);
+  	text-shadow: 12px 12px 10px black;
+ 	box-shadow: 10px 10px 20px black;
+ 	margin-right: 20px;
+ 	border-radius: 5px;
+}
+
+.panel-body{
+	color: white;
+	background:rgba(0,0,0,0.5);
+  	text-shadow: 12px 12px 10px black;
+ 	box-shadow: 10px 10px 20px black;
+ 	margin-right: 20px;
+ 	border-radius: 5px;
+ 	text-align: center;
+}
+
+.form-group{
+	font-size: 15px;
+}
 
 #describe-form {
     padding: 20px; 
@@ -12,18 +80,23 @@ body {
 #search-descriptor {
     margin: 10px;
     font-variant: small-caps;
-<<<<<<< HEAD
+}
+.form-inline {
+	width: 33%;
+	text-align: center;
+	color: white;
+	margin-left: 33%;
+	background:rgba(0,0,0,0.5);
+	border-radius: 5px;
 }
 
 #mapid { 
-    height: 180px; 
+    height: 180px;
+    margin-top: 100px; 
+    box-shadow: 10px 10px 20px black;
 }
-=======
 
-#mapid { 
-
-	height: 180px; 
-
-
+#buttons {
+	margin-left: 20px;
 }
->>>>>>> 284b9c8097806b268d993b77dc13aa4ebe106702
+
