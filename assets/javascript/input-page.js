@@ -1,13 +1,14 @@
+ // Initialize Firebase
 var config = {
- apiKey: "AIzaSyB0p6U_W374WOOQ2H-TNBzNJ1GiAZl-tHQ",
- authDomain: "project-one-march.firebaseapp.com",
- databaseURL: "https://project-one-march.firebaseio.com",
- projectId: "project-one-march",
- storageBucket: "",
- messagingSenderId: "756241675187"
-
+apiKey: "AIzaSyAihlbC4ivgJwyFqAz-FYNf93sy8bz636I",
+authDomain: "localgoods-aa6c0.firebaseapp.com",
+databaseURL: "https://localgoods-aa6c0.firebaseio.com",
+projectId: "localgoods-aa6c0",
+storageBucket: "localgoods-aa6c0.appspot.com",
+messagingSenderId: "1095816598731"
 };
 firebase.initializeApp(config);
+
 var database = firebase.database();
 
 var name = "";
@@ -58,30 +59,27 @@ database.ref().on(
     var hoursTd = $("<td>").text(snap.hours);
     var goodsTd = $("<td>").text(snap.goods);
 
+   var buttonDelete = $("<button>");
+    buttonDelete.attr("data-delete", snap.name);
+    buttonDelete.addClass("button");
+    buttonDelete.text("Delete");
+
     // Append the newly created table data to the table row
-    tRow.append(nameTd, destinationTd, hoursTd, goodsTd);
+    tRow.append(nameTd, destinationTd, hoursTd, goodsTd, buttonDelete);
     // Append the table row to the table body
     tBody.append(tRow);
-  },
-  function(errorObject) {
+
+
+  	   
+    $(".button").on("click", function(){
+      $(this).closest("tr").remove();
+
+    });
+
+
+  }, function(errorObject) {
     console.log("Errors handled: " + errorObject.code);
   }
 );
 
-var map = L.map('mapid').setView([51.505, -0.09], 13);
 
-	L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-	    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-	}).addTo(map);
-
-	L.marker([51.5, -0.09]).addTo(map)
-	    .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
-	    .openPopup();
-
-
-	  L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-	    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
-	    maxZoom: 18,
-	    id: 'mapbox.streets',
-	    accessToken: 'your.mapbox.access.token'
-	}).addTo(mymap);
