@@ -1,14 +1,13 @@
- // Initialize Firebase
 var config = {
-apiKey: "AIzaSyAihlbC4ivgJwyFqAz-FYNf93sy8bz636I",
-authDomain: "localgoods-aa6c0.firebaseapp.com",
-databaseURL: "https://localgoods-aa6c0.firebaseio.com",
-projectId: "localgoods-aa6c0",
-storageBucket: "localgoods-aa6c0.appspot.com",
-messagingSenderId: "1095816598731"
+ apiKey: "AIzaSyB0p6U_W374WOOQ2H-TNBzNJ1GiAZl-tHQ",
+ authDomain: "project-one-march.firebaseapp.com",
+ databaseURL: "https://project-one-march.firebaseio.com",
+ projectId: "project-one-march",
+ storageBucket: "",
+ messagingSenderId: "756241675187"
+
 };
 firebase.initializeApp(config);
-
 var database = firebase.database();
 
 var name = "";
@@ -37,6 +36,7 @@ $("#submit").on("click", function() {
     goods: goods,
     TIMESTAMP: firebase.database.ServerValue.TIMESTAMP
   });
+
 });
 
   var audioElement = document.createElement("audio");
@@ -57,7 +57,8 @@ $("#submit").on("click", function() {
     audioElement.pause();
 
   });
-  
+
+
 database.ref().on(
   "child_added",
   function(snapshot) {
@@ -79,26 +80,14 @@ database.ref().on(
     var hoursTd = $("<td>").text(snap.hours);
     var goodsTd = $("<td>").text(snap.goods);
 
-   var buttonDelete = $("<button>");
-    buttonDelete.attr("data-delete", snap.name);
-    buttonDelete.addClass("button");
-    buttonDelete.text("Delete");
-
     // Append the newly created table data to the table row
-    tRow.append(nameTd, destinationTd, hoursTd, goodsTd, buttonDelete);
+    tRow.append(nameTd, destinationTd, hoursTd, goodsTd);
     // Append the table row to the table body
     tBody.append(tRow);
-
-
-  	   
-    $(".button").on("click", function(){
-      $(this).closest("tr").remove();
-
-    });
-
-
-  }, function(errorObject) {
+  },
+  function(errorObject) {
     console.log("Errors handled: " + errorObject.code);
   }
 );
+
 
