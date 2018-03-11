@@ -9,6 +9,16 @@ body {
 	/*text-align: center;*/
 }
 
+#mooCow{
+	height: 240px;
+}
+
+.brand-logo{
+	margin-left: 200px;
+	font-family: 'Lobster', cursive;
+	font-size: 50px;
+}
+
 main {
   flex: 1 0 auto;
 }
@@ -24,6 +34,9 @@ h1{
   margin-bottom: 20px;
 }
 
+.text-center{
+	text-align: center;
+}
 /*.navbar-brand {
 	float: right;
 	color: white;
@@ -57,6 +70,7 @@ h1{
   	border-radius: 5px;
   	text-align: center;
 }*/
+
 
 .navbar-fixed{
   text-shadow: 12px 12px 10px black;
