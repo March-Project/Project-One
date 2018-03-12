@@ -37,51 +37,55 @@ h1{
   text-align: center;
 }
 
+
 .text-center{
   text-align: center;
 }
+
 /*.navbar-brand {
-  float: right;
-  color: white;
-   background:rgba(0,0,0,0.5);
-    text-shadow: 12px 12px 10px black;
-    box-shadow: 10px 10px 20px black;
-    margin-right: 20px;
-    font-size: 15px;
-    border-radius: 5px;
-    text-align: center;
+	float: right;
+	color: white;
+	 background:rgba(0,0,0,0.5);
+  	text-shadow: 12px 12px 10px black;
+  	box-shadow: 10px 10px 20px black;
+  	margin-right: 20px;
+  	font-size: 15px;
+  	border-radius: 5px;
+  	text-align: center;
 }*/
 
 /*.nav-link{
-  float: right;
-  color: white;
-  background:rgba(0,0,0,0.5);
-    text-shadow: 12px 12px 10px black;
-  box-shadow: 10px 10px 20px black;
-  margin-right: 20px;
-  border-radius: 5px;
-  text-align: center;
+	float: right;
+	color: white;
+	background:rgba(0,0,0,0.5);
+  	text-shadow: 12px 12px 10px black;
+ 	box-shadow: 10px 10px 20px black;
+ 	margin-right: 20px;
+ 	border-radius: 5px;
+ 	text-align: center;
 }*/
 
 /*.nav-item{
-  float: right;
-  color: white;
-    background:rgba(0,0,0,0.5);
-    text-shadow: 12px 12px 10px black;
-    box-shadow: 10px 10px 20px black;
-    margin-right: 20px;
-    border-radius: 5px;
-    text-align: center;
-}
+ 	float: right;
+ 	color: white;
+  	background:rgba(0,0,0,0.5);
+  	text-shadow: 12px 12px 10px black;
+  	box-shadow: 10px 10px 20px black;
+  	margin-right: 20px;
+  	border-radius: 5px;
+  	text-align: center;
+}*/
 
 
 .navbar-fixed{
   text-shadow: 12px 12px 10px black;
   box-shadow: 10px 10px 20px black;
 }
+
 .page-footer{
   
 }
+
 #dataTable{
   color: white;
   background:rgba(0,0,0,0.5);
@@ -123,9 +127,7 @@ h1{
 }
 
 #mapid { 
-    height: 180px;
-    margin-top: 100px; 
-    box-shadow: 10px 10px 20px black;
+    
 }
 
 #buttons {

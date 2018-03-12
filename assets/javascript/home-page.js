@@ -1,13 +1,20 @@
-// Initialize Firebase
-var config = {
-  apiKey: "AIzaSyAihlbC4ivgJwyFqAz-FYNf93sy8bz636I",
-  authDomain: "localgoods-aa6c0.firebaseapp.com",
-  databaseURL: "https://localgoods-aa6c0.firebaseio.com",
-  projectId: "localgoods-aa6c0",
-  storageBucket: "localgoods-aa6c0.appspot.com",
-  messagingSenderId: "1095816598731"
-};
-firebase.initializeApp(config);
+ // Initialize Firebase
+ var config = {
+ apiKey: "AIzaSyAihlbC4ivgJwyFqAz-FYNf93sy8bz636I",
+ authDomain: "localgoods-aa6c0.firebaseapp.com",
+ databaseURL: "https://localgoods-aa6c0.firebaseio.com",
+ projectId: "localgoods-aa6c0",
+ storageBucket: "",
+ messagingSenderId: "1095816598731",
+apiKey: "AIzaSyAihlbC4ivgJwyFqAz-FYNf93sy8bz636I",
+authDomain: "localgoods-aa6c0.firebaseapp.com",
+databaseURL: "https://localgoods-aa6c0.firebaseio.com",
+projectId: "localgoods-aa6c0",
+storageBucket: "localgoods-aa6c0.appspot.com",
+messagingSenderId: "1095816598731"
+ };
+
+ firebase.initializeApp(config);
 
  var database = firebase.database();
  
@@ -36,7 +43,7 @@ function initMap() {
 
       map.setCenter(pos);
 
-//Creates the audio element
+// Creates the audio element
   var audioElement = document.createElement("audio");
 
   audioElement.setAttribute("src", "assets/music/Stardew_Valley_OST.mp3");
@@ -52,9 +59,6 @@ function initMap() {
 
   });
 
-  // Set it's source to the location
-  // of our theme song file.
- 
   $(document).ready(function(){
    $("#search_good").on("click", onSearchClick);
  
@@ -67,9 +71,7 @@ function initMap() {
     displayProduce(buttonValue); 
     
    });
-  }
-}
-
+  
 // Run the initialize function when the window has finished loading.
 google.maps.event.addDomListener(window, 'load', initMap);
 
@@ -85,7 +87,6 @@ function displayProduce(produce){
       searchLocation(snap);
     });
 }
-
 
 // on click, searches the location of the data linked to the button. farm = snap
 function searchLocation(farm) {
@@ -114,7 +115,7 @@ function searchLocation(farm) {
       }); 
       console.log(results);
   });
-});
+ });
 }
 
 
@@ -143,7 +144,6 @@ function addTopicButton(newTopic){
 
 }
  
-
  
  // Presentation: 
  // Explain that users are only allowed to enter one good at a time in the input form - for now. 
@@ -159,4 +159,3 @@ function addTopicButton(newTopic){
  // Auth login for firebase
  // Create drop down menu in goods input form so users are only allowed to sell one item per submit.
 // (or figure way to allow multiple items to be referenced in single click) Currently, you cannot be selling Eggs and Goats, and click eggs. 
-
