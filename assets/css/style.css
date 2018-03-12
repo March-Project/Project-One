@@ -80,7 +80,7 @@ h1{
   text-shadow: 12px 12px 10px black;
   box-shadow: 10px 10px 20px black;
 }
-.page-footer{
+
   
 }
 #dataTable{
@@ -131,5 +131,9 @@ h1{
 
 #buttons {
 	margin-left: 20px;
+}
+
+#contactUs{
+	margin-right: 25%;
 }
 
