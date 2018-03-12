@@ -34,7 +34,7 @@ $("#submit").on("click", function() {
     name: name,
     destination: destination,
     hours: hours,
-    goods: goods,
+    goods: goods.toUpperCase(),
     TIMESTAMP: firebase.database.ServerValue.TIMESTAMP
   });
 });
@@ -42,10 +42,7 @@ database.ref().on(
   "child_added",
   function(snapshot) {
     var snap = snapshot.val();
-    console.log(snap.name);
-    console.log(snap.destination);
-    console.log(hours);
-    console.log(snap.goods);
+    
 
     $("#name-display").text(snap.name);
     $("#destination-display").text(snap.destination);

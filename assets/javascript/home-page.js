@@ -6,7 +6,7 @@
  databaseURL: "https://localgoods-aa6c0.firebaseio.com",
  projectId: "localgoods-aa6c0",
  storageBucket: "",
- messagingSenderId: "1095816598731"
+ messagingSenderId: "1095816598731",
 apiKey: "AIzaSyAihlbC4ivgJwyFqAz-FYNf93sy8bz636I",
 authDomain: "localgoods-aa6c0.firebaseapp.com",
 databaseURL: "https://localgoods-aa6c0.firebaseio.com",
@@ -19,29 +19,55 @@ messagingSenderId: "1095816598731"
 
  var database = firebase.database();
  
-var topics = ["Eggs", "Bread", "Milk", "Chickens", "Goats"];
- 
- 
- $(document).ready(function(){
-   $("#search_good").on("click", onSearchClick);
- 
-    for(var i = 0; i < topics.length; i++) {
-       addTopicButton(topics[i]);
-    }
- 
-   $("#buttons").on("click", "button"){
-      $(this).attr("data-name");
-   }
-   
+var topics = ["EGGS", "BREAD", "MILK", "CHICKENS", "GOATS"];
 
-   $("#buttons").on("click", "button", function(){
-    var buttonValue = $(this).attr("data-topic");
-    console.log(buttonValue);
-    displayProduce(buttonValue); 
+var map, service, infoWindow;
+function initMap() {
+  var uluru = {lat: -25.363, lng: 131.044};
+  map = new google.maps.Map(document.getElementById('mapId'), {
+    zoom: 7,
+    center: uluru
+  });
+
+  infoWindow = new google.maps.InfoWindow();
+
+  service = new google.maps.places.PlacesService(map);
+
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var pos = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      };
+
+      map.setCenter(pos);
     });
-      
-      
+  }
+}
+
+// Run the initialize function when the window has finished loading.
+google.maps.event.addDomListener(window, 'load', initMap);
+
+
+
+
+
+ 
+ 
+$(document).ready(function(){
+  $("#search-descriptor").on("click", onSearchClick);
+  for(var i = 0; i < topics.length; i++) {
+    addTopicButton(topics[i]);
+ }
+
+ $("#buttons").on("click", "button", onButtonClick);
 });
+
+function onButtonClick(){
+  var buttonValue = $(this).attr("data-topic");
+  displayProduce(buttonValue); 
+ }
+
 
 
 function displayProduce(produce){
@@ -49,26 +75,46 @@ function displayProduce(produce){
     .ref()
     .orderByChild("goods")
     .equalTo(produce)
-    .on("child_added", displayProduceHTML);
+    .on("child_added", function(snapshot){
+      var snap = snapshot.val();
+      searchLocation(snap);
+    });
 }
 
-function displayProduceHTML(snapshot) {
-  var snap = snapshot.val();
+function searchLocation(farm) {
+  service.textSearch({query: farm.destination}, function(results){
+    var location = results[0].geometry.location;
+    var marker = new google.maps.Marker({
+          position: {
+            lat: location.lat(), 
+            lng: location.lng()
+          }, 
+          map: map
+        });
 
-  //build HTML here
-  $("#name-display").text(snap.name);
-  $("#destination-display").text(snap.destination); 
-  $("#hours-display").text(snap.hours);
-  $("#goods-display").text(snap.goods); 
+      marker.addListener('click', function() {
+        var contentString = "";
+        contentString += `<div>${farm.name}</div>`;
+        contentString += `<div>${farm.destination}</div>`
+        contentString += `<div>Selling: ${farm.goods}</div>`
+        contentString += `<div>Hours: ${farm.hours}</div>`
+          infoWindow.setContent(contentString);
+          infoWindow.open(map, marker);
+      }); 
+      console.log(results);
+  });
 
-  //append it to goods info here
-  $("#goodsInfo").append(snap.goods);
-  $("#goodsInfo").append(snap.destination);
-  $("#goodsInfo").append(snap.hours);
-  $("#goodsInfo").append(snap.goods); 
+
 }
 
 
+function addTopicButton(newTopic){
+   var topicButton = $("<button>");
+   topicButton.text(newTopic);
+   topicButton.attr("data-topic", newTopic);
+
+   $("#buttons").append(topicButton);
+}
  
  // grabs value from text box and adds to array 
  function getSearchVal(){
@@ -78,7 +124,8 @@ function displayProduceHTML(snapshot) {
    searchBox.val("");
 
    return newTopic;
- 
+ }
+
  function onSearchClick(){ 
    var searchVal = getSearchVal();
    addTopicButton(searchVal);
@@ -86,30 +133,3 @@ function displayProduceHTML(snapshot) {
 }
  
  
-
- var mymap = L.map("mapid").setView([35.7796, -78.6382], 13);
-L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png", {
-  attribution:
-    '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-})//.addTo(mymap);
-L.marker([35.7796, -78.6382])
-  .addTo(mymap)
-  .bindPopup("Where am I?")
-  .openPopup();
-L.tileLayer(
-  "https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={pk.eyJ1IjoibHN3ZWhiaWUiLCJhIjoiY2plaHIzMHU0MmJ5NzJ4bWs5YnJkMWp2OSJ9.Y-2AEgRxi3Iiq8j7TcSlcQ}",
-  {
-    attribution:
-      'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
-    maxZoom: 18,
-    id: "mapbox.satellite",
-    accessToken:
-      "pk.eyJ1IjoibHN3ZWhiaWUiLCJhIjoiY2plaHIzMHU0MmJ5NzJ4bWs5YnJkMWp2OSJ9.Y-2AEgRxi3Iiq8j7TcSlcQs"
-  }
-)//.addTo(mymap);
-var circle = L.circle([35.779, -78.63], {
-  color: "red",
-  fillColor: "#f03",
-  fillOpacity: 0.5,
-  radius: 500
-})//.addTo(mymap);
