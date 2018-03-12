@@ -1,76 +1,108 @@
-
 body {
-    background:url("../images/background.jpeg");
-	background-repeat: no-repeat;
-	background-size: cover; 
-	text-align: center;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  background:url("../images/background.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover; 
+  /*text-align: center;*/
 }
 
+#mooCow{
+  height: 240px;
+  : 12px 12px 10px black;
+  -webkit-filter: drop-shadow(5px 5px 5px #222);
+    filter: drop-shadow(5px 5px 5px #222);
+}
+
+.brand-logo{
+  margin-left: 200px;
+  font-family: 'Lobster', cursive;
+  font-size: 50px;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+
 h1{
-	color: white;
-	font-family: 'Abril Fatface', cursive;
+  color: white;
+  font-family: 'Abril Fatface', cursive;
   background:rgba(0,0,0,0.5);
   text-shadow: 12px 12px 10px black;
   box-shadow: 10px 10px 20px black;
   border-radius: 5px;
   margin-bottom: 20px;
+  text-align: center;
 }
 
-.navbar-brand {
-	float: right;
-	color: white;
-	 background:rgba(0,0,0,0.5);
-  	text-shadow: 12px 12px 10px black;
-  	box-shadow: 10px 10px 20px black;
-  	margin-right: 20px;
-  	font-size: 15px;
-  	border-radius: 5px;
-  	text-align: center;
+.text-center{
+  text-align: center;
 }
+/*.navbar-brand {
+  float: right;
+  color: white;
+   background:rgba(0,0,0,0.5);
+    text-shadow: 12px 12px 10px black;
+    box-shadow: 10px 10px 20px black;
+    margin-right: 20px;
+    font-size: 15px;
+    border-radius: 5px;
+    text-align: center;
+}*/
 
-.nav-link{
-	float: right;
-	color: white;
-	background:rgba(0,0,0,0.5);
-  	text-shadow: 12px 12px 10px black;
- 	box-shadow: 10px 10px 20px black;
- 	margin-right: 20px;
- 	border-radius: 5px;
- 	text-align: center;
+/*.nav-link{
+  float: right;
+  color: white;
+  background:rgba(0,0,0,0.5);
+    text-shadow: 12px 12px 10px black;
+  box-shadow: 10px 10px 20px black;
+  margin-right: 20px;
+  border-radius: 5px;
+  text-align: center;
+}*/
+
+/*.nav-item{
+  float: right;
+  color: white;
+    background:rgba(0,0,0,0.5);
+    text-shadow: 12px 12px 10px black;
+    box-shadow: 10px 10px 20px black;
+    margin-right: 20px;
+    border-radius: 5px;
+    text-align: center;
+}*/
+
+
+.navbar-fixed{
+  text-shadow: 12px 12px 10px black;
+  box-shadow: 10px 10px 20px black;
 }
-
-.nav-item{
- 	float: right;
- 	color: white;
-  	background:rgba(0,0,0,0.5);
-  	text-shadow: 12px 12px 10px black;
-  	box-shadow: 10px 10px 20px black;
-  	margin-right: 20px;
-  	border-radius: 5px;
-  	text-align: center;
+.page-footer{
+  
 }
-
 #dataTable{
-	color: white;
-	background:rgba(0,0,0,0.5);
-  	text-shadow: 12px 12px 10px black;
- 	box-shadow: 10px 10px 20px black;
- 	margin-right: 20px;
- 	border-radius: 5px;
+  color: white;
+  background:rgba(0,0,0,0.5);
+    text-shadow: 12px 12px 10px black;
+  box-shadow: 10px 10px 20px black;
+  margin-right: 20px;
+  border-radius: 5px;
 }
 
 .panel-body{
-	color: white;
-	background:rgba(0,0,0,0.5);
-  	text-shadow: 12px 12px 10px black;
- 	box-shadow: 10px 10px 20px black;
- 	margin-right: 20px;
- 	border-radius: 5px;
- 	text-align: center;
+  color: white;
+  background:rgba(0,0,0,0.5);
+    text-shadow: 12px 12px 10px black;
+  box-shadow: 10px 10px 20px black;
+  margin-right: 20px;
+  border-radius: 5px;
+  text-align: center;
 }
 
 .form-group{
-	font-size: 15px;
+  font-size: 15px;
 }
 
 #describe-form {
@@ -82,12 +114,12 @@ h1{
     font-variant: small-caps;
 }
 .form-inline {
-	width: 33%;
-	text-align: center;
-	color: white;
-	margin-left: 33%;
-	background:rgba(0,0,0,0.5);
-	border-radius: 5px;
+  width: 33%;
+  text-align: center;
+  color: white;
+  margin-left: 33%;
+  background:rgba(0,0,0,0.5);
+  border-radius: 5px;
 }
 
 #mapid { 
@@ -97,6 +129,5 @@ h1{
 }
 
 #buttons {
-	margin-left: 20px;
+  margin-left: 20px;
 }
-
