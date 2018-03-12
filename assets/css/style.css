@@ -38,6 +38,12 @@ h1{
   text-align: center;
 }
 
+h3{
+	text-align: center;
+	color: #4db6ac;
+	text-shadow: 2px 2px 6px black;
+}
+
 .text-center{
 	text-align: center;
 }
