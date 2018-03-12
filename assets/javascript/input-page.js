@@ -38,6 +38,26 @@ $("#submit").on("click", function() {
     TIMESTAMP: firebase.database.ServerValue.TIMESTAMP
   });
 });
+
+  var audioElement = document.createElement("audio");
+
+  // Set it's source to the location
+  // of our Captain Planet theme song file.
+  audioElement.setAttribute("src", "./assets/music/Stardew_Valley_OST.mp3");
+
+  // Theme Button
+
+
+  $(".theme-button").on("click", function() {
+    audioElement.play();
+  });
+
+  // Pause Button
+  $(".pause-button").on("click", function() {
+    audioElement.pause();
+
+  });
+  
 database.ref().on(
   "child_added",
   function(snapshot) {
@@ -78,5 +98,4 @@ database.ref().on(
     console.log("Errors handled: " + errorObject.code);
   }
 );
-
 

@@ -1,4 +1,15 @@
+// Initialize Firebase
+var config = {
+  apiKey: "AIzaSyAihlbC4ivgJwyFqAz-FYNf93sy8bz636I",
+  authDomain: "localgoods-aa6c0.firebaseapp.com",
+  databaseURL: "https://localgoods-aa6c0.firebaseio.com",
+  projectId: "localgoods-aa6c0",
+  storageBucket: "localgoods-aa6c0.appspot.com",
+  messagingSenderId: "1095816598731"
+};
+firebase.initializeApp(config);
 
+<<<<<<< HEAD
  // Initialize Firebase
  var config = {
  apiKey: "AIzaSyAihlbC4ivgJwyFqAz-FYNf93sy8bz636I",
@@ -43,6 +54,53 @@ function initMap() {
       };
 
       map.setCenter(pos);
+=======
+var database = firebase.database();
+
+var topics = [
+  "Eggs",
+  "Bread/Grains",
+  "Milk/Cheese",
+  "Lettuce",
+  "Chickens",
+  "Goats"
+];
+
+  var audioElement = document.createElement("audio");
+
+  audioElement.setAttribute("src", "assets/music/Stardew_Valley_OST.mp3");
+
+
+  $(".theme-button").on("click", function() {
+    audioElement.play();
+  });
+
+  // Pause Button
+  $(".pause-button").on("click", function() {
+    audioElement.pause();
+
+  });
+
+  // Set it's source to the location
+  // of our Captain Planet theme song file.
+ 
+  $(document).ready(function(){
+   $("#search_good").on("click", onSearchClick);
+ 
+    for(var i = 0; i < topics.length; i++) {
+       addTopicButton(topics[i]);
+    }
+ 
+   $("#buttons").on("click", "button"){
+      $(this).attr("data-name");
+   }
+   
+
+   $("#buttons").on("click", "button", function(){
+    var buttonValue = $(this).attr("data-topic");
+    console.log(buttonValue);
+    displayProduce(buttonValue); 
+>>>>>>> master
     });
   }
 }
@@ -78,6 +136,7 @@ function displayProduce(produce){
     });
 }
 
+<<<<<<< HEAD
 // on click, searches the location of the data linked to the button. farm = snap
 function searchLocation(farm) {
   // searching for the entered location (text)
@@ -105,6 +164,12 @@ function searchLocation(farm) {
       }); 
       console.log(results);
   });
+=======
+});
+
+function displayProduceHTML(snapshot) {
+  var snap = snapshot.val();
+>>>>>>> master
 
 
 }
@@ -135,6 +200,7 @@ function addTopicButton(newTopic){
 
 }
  
+<<<<<<< HEAD
  
  // Presentation: 
  // Explain that users are only allowed to enter one good at a time in the input form - for now. 
@@ -150,3 +216,28 @@ function addTopicButton(newTopic){
  // Auth login for firebase
  // Create drop down menu in goods input form so users are only allowed to sell one item per submit.
 // (or figure way to allow multiple items to be referenced in single click) Currently, you cannot be selling Eggs and Goats, and click eggs. 
+=======
+ var mymap = L.map("mapid").setView([35.7796, -78.6382], 13);
+L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png", {
+  attribution:
+    '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+})//.addTo(mymap);
+
+L.marker([35.7796, -78.6382])
+  .addTo(mymap)
+  .bindPopup("Where am I?")
+  .openPopup();
+
+L.tileLayer(
+  "https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={pk.eyJ1IjoibHN3ZWhiaWUiLCJhIjoiY2plaHIzMHU0MmJ5NzJ4bWs5YnJkMWp2OSJ9.Y-2AEgRxi3Iiq8j7TcSlcQ}",
+  {
+    attribution:
+      'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+    maxZoom: 18,
+    id: "mapbox.satellite",
+    accessToken:
+      "pk.eyJ1IjoibHN3ZWhiaWUiLCJhIjoiY2plaHIzMHU0MmJ5NzJ4bWs5YnJkMWp2OSJ9.Y-2AEgRxi3Iiq8j7TcSlcQs"
+  }
+)//.addTo(mymap);
+
+>>>>>>> master
