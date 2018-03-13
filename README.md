@@ -10,6 +10,6 @@
 
 # Developers
 * Amber Girard
-* Thea
+* Thea Long
 * Lara Wehbie
 * Kayla McFadden 
