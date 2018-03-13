@@ -41,13 +41,10 @@ $("#submit").on("click", function() {
 
   var audioElement = document.createElement("audio");
 
-  // Set it's source to the location
-  // of our Captain Planet theme song file.
+  // Set it's source to the location of our file
   audioElement.setAttribute("src", "./assets/music/Stardew_Valley_OST.mp3");
 
   // Theme Button
-
-
   $(".theme-button").on("click", function() {
     audioElement.play();
   });
