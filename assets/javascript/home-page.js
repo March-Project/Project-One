@@ -6,14 +6,8 @@
  projectId: "localgoods-aa6c0",
  storageBucket: "",
  messagingSenderId: "1095816598731",
-apiKey: "AIzaSyAihlbC4ivgJwyFqAz-FYNf93sy8bz636I",
-authDomain: "localgoods-aa6c0.firebaseapp.com",
-databaseURL: "https://localgoods-aa6c0.firebaseio.com",
-projectId: "localgoods-aa6c0",
-storageBucket: "localgoods-aa6c0.appspot.com",
-messagingSenderId: "1095816598731"
  };
-
+ 
  firebase.initializeApp(config);
 
  var database = firebase.database();
@@ -42,9 +36,24 @@ function initMap() {
       };
 
       map.setCenter(pos);
+    });
+  }
+}
 
-// Creates the audio element
-  var audioElement = document.createElement("audio");
+// Run the initialize function when the window has finished loading.
+google.maps.event.addDomListener(window, 'load', initMap);
+
+$(document).ready(function(){
+  $("#search_good").on("click", onSearchClick);
+  for(var i = 0; i < topics.length; i++) {
+    addTopicButton(topics[i]);
+ }
+    $("#buttons").on("click", "button", function(){
+      var buttonValue = $(this).attr("data-topic");
+      displayProduce(buttonValue); 
+    });
+
+      var audioElement = document.createElement("audio");
 
   audioElement.setAttribute("src", "assets/music/Stardew_Valley_OST.mp3");
 
@@ -58,22 +67,8 @@ function initMap() {
     audioElement.pause();
 
   });
-
-  $(document).ready(function(){
-   $("#search_good").on("click", onSearchClick);
  
-    for(var i = 0; i < topics.length; i++) {
-       addTopicButton(topics[i]);
-    }
-    
-   $("#buttons").on("click", "button", function(){
-    var buttonValue = $(this).attr("data-topic");
-    displayProduce(buttonValue); 
-    
-   });
-  
-// Run the initialize function when the window has finished loading.
-google.maps.event.addDomListener(window, 'load', initMap);
+});
 
 
 // searching/filtering the data from the input page
@@ -107,15 +102,15 @@ function searchLocation(farm) {
       marker.addListener('click', function() {
         var contentString = "";
         contentString += `<div>${farm.name}</div>`;
-        contentString += `<div>${farm.destination}</div>`
-        contentString += `<div>Selling: ${farm.goods}</div>`
-        contentString += `<div>Hours: ${farm.hours}</div>`
+        contentString += `<div>${farm.destination}</div>`;
+        contentString += `<div>Selling: ${farm.goods}</div>`;
+        contentString += `<div>Hours: ${farm.hours}</div>`;
           infoWindow.setContent(contentString);
           infoWindow.open(map, marker);
       }); 
-      console.log(results);
+      
   });
- });
+
 }
 
 
@@ -143,7 +138,10 @@ function addTopicButton(newTopic){
    addTopicButton(searchVal);
 
 }
+
+
  
+
  
  // Presentation: 
  // Explain that users are only allowed to enter one good at a time in the input form - for now. 
