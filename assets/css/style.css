@@ -29,6 +29,10 @@ h3{
     text-shadow: 2px 2px 6px black;
 }
 
+#buttons {
+    margin-left: 35%;
+}
+
 #mooCow{
     height: 260px;
     : 12px 12px 10px black;
